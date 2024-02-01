@@ -33,7 +33,7 @@ I started this project in Jan 2023. However i accidently pushed some sensitive i
 - The ```js/``` folder has the *service worker for onesignal* provided Onesginal. They keep updating their API , so make sure file is up to date.
 >The service worker for/of onesignal is kept in a different path because it conflicted with the service worker in root path required for PWA.
 
-- [This line](https://github.com/sanjeev-san/anonymous/inbox.php#L44) is the subscription button to Onesignal's notification API for a user. You can remove/edit as per your use case. 
+- [This line](https://github.com/sanjeev-san/anonymous/blob/main/inbox.php#L44) is the subscription button to Onesignal's notification API for a user. You can remove/edit as per your use case. 
 
 - The ```config/notify.php``` contains code to send users a notifcation if they have unread messages in last 48 hours. You will need ```app_id template_id auth_secret``` to use the feature. You can use your own logic or any other method than mine.
 
