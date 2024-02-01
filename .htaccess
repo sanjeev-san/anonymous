@@ -1,0 +1,21 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^@([-\w]+)$ send.php?id=$1 [NC,L]
+RewriteRule ^@([-\w]+)/$ send.php?id=$1 [NC,L]
+
+##remove extensions
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Redirect to error page when accessing notify.php
+RedirectMatch 301 ^(.*)/config(.*) http://localhost/anonymous/error.php?c=400
+
+##error pages
+ErrorDocument 400   http://localhost/anonymous/error.php?c=400
+ErrorDocument 401   http://localhost/anonymous/error.php?c=401
+ErrorDocument 403   http://localhost/anonymous/error.php?c=403
+ErrorDocument 404   http://localhost/anonymous/error.php?c=404
+ErrorDocument 408   http://localhost/anonymous/error.php?c=408
+ErrorDocument 500   http://localhost/anonymous/error.php?c=500
+ErrorDocument 502   http://localhost/anonymous/error.php?c=502
